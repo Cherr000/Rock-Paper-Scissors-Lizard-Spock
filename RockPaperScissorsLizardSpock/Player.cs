@@ -10,7 +10,7 @@ namespace RockPaperScissorsLizardSpock
     {
         public string player1Name;
         public string player2Name;
-        public Random AiRandomOption;
+        public Random AiRandomOption = new Random();
 
         public Player()
         {
@@ -24,7 +24,7 @@ namespace RockPaperScissorsLizardSpock
         }
         public void GetPlayer2Name()
         {
-            Console.WriteLine("\nPlease Enter Player 2 Name: ");
+            Console.Write("\nPlease Enter Player 2 Name: ");
             player2Name = (Console.ReadLine());
         }
         public string GetAi()
@@ -33,11 +33,11 @@ namespace RockPaperScissorsLizardSpock
             return Ai;
 
         }
-        public Random GetAiOption()
+        public int GetAiOption()
         {
-
             int choice = AiRandomOption.Next(1, 6);
-            return AiChoice;
-        }    
+            Console.WriteLine(choice);
+            return choice;
+        }
     }
 }

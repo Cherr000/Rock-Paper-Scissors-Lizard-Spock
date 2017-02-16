@@ -9,6 +9,7 @@ namespace RockPaperScissorsLizardSpock
     class Game
     {
         SinglePlayer singlePlayer = new SinglePlayer();
+        _2Player twoPlayer = new _2Player();
 
         private void GetRule()
         {
@@ -28,6 +29,7 @@ namespace RockPaperScissorsLizardSpock
                     break;
                 case "2":
                     // Make A Function To Run 2 Player
+                    twoPlayer.StartTwoPlayerGame();
                     break;
                 default:
                     Console.WriteLine("NOT A VALID OPTION");
