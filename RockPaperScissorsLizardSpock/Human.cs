@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissorsLizardSpock
 {
-    class RPSLS
+    class Human : Player
     {
-        public void GetRock()
-        {
-        }
+
     }
 }

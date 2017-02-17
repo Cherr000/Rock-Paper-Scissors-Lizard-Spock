@@ -8,8 +8,8 @@ namespace RockPaperScissorsLizardSpock
 {
     public class Player
     {
-        public string player1Name;
-        public string player2Name;
+        public string name;
+        public string choice;
         public Random AiRandomOption = new Random();
 
         public Player()
@@ -17,27 +17,41 @@ namespace RockPaperScissorsLizardSpock
 
         }
 
-        public void GetPlayer1Name()
+        public void GetPlayerName()
         {
-            Console.Write("\nPlease Enter Player 1 Name: ");
-            player1Name = (Console.ReadLine());
+            Console.Write("\nPlease Enter Player Name: ");
+            name = (Console.ReadLine());
         }
-        public void GetPlayer2Name()
+        
+        
+        
+        public virtual void ChooseOption()
         {
-            Console.Write("\nPlease Enter Player 2 Name: ");
-            player2Name = (Console.ReadLine());
+            Console.WriteLine($"\n{name} Choose Your Option: \n Rock, Paper, Scissors, Lizard, or Spock");
+            choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "Rock":
+                    Console.WriteLine($"{name} Choose Rock");
+                    break;
+                case "Paper":
+                    Console.WriteLine($"{name} Choose Paper");
+                    break;
+                case "Scissors":
+                    Console.WriteLine($"{name} Choose Scissors");
+                    break;
+                case "Lizard":
+                    Console.WriteLine($"{name} Choose Lizard");
+                    break;
+                case "Spock":
+                    Console.WriteLine($"{name} Choose Spock");
+                    break;
+                default:
+                    Console.WriteLine("NOT A VALID OPTION");
+                    ChooseOption();
+                    break;
+            }
         }
-        public string GetAi()
-        {
-            string Ai = "Ai";
-            return Ai;
-
-        }
-        public int GetAiOption()
-        {
-            int choice = AiRandomOption.Next(1, 6);
-            Console.WriteLine(choice);
-            return choice;
-        }
+        
     }
 }

@@ -8,8 +8,10 @@ namespace RockPaperScissorsLizardSpock
 {
     class Game
     {
-        SinglePlayer singlePlayer = new SinglePlayer();
-        _2Player twoPlayer = new _2Player();
+        public int playerOnePoint;
+        public int playerTwoPoint;
+        Player playerOne;
+        Player playerTwo;
 
         private void GetRule()
         {
@@ -24,12 +26,15 @@ namespace RockPaperScissorsLizardSpock
             switch (choosePlayer)
             {
                 case "1":
-                    // Make Function To Run Single Player
-                    singlePlayer.StartSinglePlayerGame();
+                    playerOne = new Human();
+                    playerTwo = new Computer();
+                    playerOne.GetPlayerName();
                     break;
                 case "2":
-                    // Make A Function To Run 2 Player
-                    twoPlayer.StartTwoPlayerGame();
+                    playerOne = new Human();
+                    playerTwo = new Human();
+                    playerOne.GetPlayerName();
+                    playerTwo.GetPlayerName();
                     break;
                 default:
                     Console.WriteLine("NOT A VALID OPTION");
@@ -37,10 +42,42 @@ namespace RockPaperScissorsLizardSpock
                     break;
             }
         }
+        private void RoundWinner()
+        {
+            if ((playerOne.choice == "Rock" && playerTwo.choice == "Rock") || (playerOne.choice == "Paper" && playerTwo.choice == "Paper") || (playerOne.choice == "Scissors" && playerTwo.choice == "Scissors") || (playerOne.choice == "Lizard" && playerTwo.choice == "Lizard")  || (playerOne.choice == "Spock" && playerTwo.choice == "Spock"))
+            {
+                Console.WriteLine("Tie");
+            }
+            else if ((playerOne.choice == "Rock" && playerTwo.choice == "Scissors") || (playerOne.choice == "Rock" && playerTwo.choice == "Lizard") || (playerOne.choice == "Paper" && playerTwo.choice == "Rock") || (playerOne.choice == "Paper" && playerTwo.choice == "Lizard") || (playerOne.choice == "Scissors" && playerTwo.choice == "Paper") || (playerOne.choice == "Scissors" && playerTwo.choice == "Lizard") || (playerOne.choice == "Lizard" && playerTwo.choice == "Paper") || (playerOne.choice == "Lizard" && playerTwo.choice == "Lizard") || (playerOne.choice == "Spock" && playerTwo.choice == "Scissors") || (playerOne.choice == "Spock" && playerTwo.choice == "Rock"))
+            {
+                Console.WriteLine($"{playerOne.name} Won This Round");
+                playerOnePoint++;
+            }
+            else
+            {
+                Console.WriteLine($"{playerTwo.name} Won This Round");
+                playerTwoPoint++;
+            }
+        }
+        private void GetPoint()
+        {
+            Console.WriteLine($"{playerOne.name} has {playerOnePoint} piont");
+            Console.WriteLine($"{playerTwo.name} has {playerTwoPoint} piont");
+        }
+        private void GameWinner()
+        {
+
+        }
         public void StartGame()
         {
             GetRule();
             ChoosePlayerOption();
+            playerOne.ChooseOption();
+            playerTwo.ChooseOption();
+            RoundWinner();
+            GetPoint();
+            //determine a round winner
+            //determine a game winner
         }
     }
 }
