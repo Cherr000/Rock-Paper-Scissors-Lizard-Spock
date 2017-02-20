@@ -103,6 +103,8 @@ namespace RockPaperScissorsLizardSpock
             switch (choosePlayer)
             {
                 case "Yes":
+                    playerOnePoint = 0;
+                    playerTwoPoint = 0;
                     StartGame();
                     break;
                 case "No":
