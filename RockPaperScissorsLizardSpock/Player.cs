@@ -27,6 +27,7 @@ namespace RockPaperScissorsLizardSpock
         
         public virtual void ChooseOption()
         {
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine($"\n{name} Choose Your Option: \n Rock, Paper, Scissors, Lizard, or Spock");
             choice = Console.ReadLine();
             switch (choice)

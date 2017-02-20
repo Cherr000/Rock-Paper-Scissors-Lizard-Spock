@@ -10,6 +10,8 @@ namespace RockPaperScissorsLizardSpock
     {
         static void Main(string[] args)
         {
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.Clear();
             Game gameStart = new Game();
             gameStart.StartGame();
             Console.ReadLine();
