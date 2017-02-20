@@ -16,7 +16,7 @@ namespace RockPaperScissorsLizardSpock
         public override void ChooseOption()
         {
             Random random = new Random();
-            List<string> choices = new List<string> { "Rock", "Paper", "Scissor", "Lizard", "Spock" };
+            List<string> choices = new List<string> { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
             choice = choices[random.Next(0, 4)];
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine($"\n{choice}");

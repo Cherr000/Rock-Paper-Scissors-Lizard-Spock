@@ -52,7 +52,7 @@ namespace RockPaperScissorsLizardSpock
             {
                 Console.WriteLine("Tie");
             }
-            else if ((playerOne.choice == "Rock" && playerTwo.choice == "Scissors") || (playerOne.choice == "Rock" && playerTwo.choice == "Lizard") || (playerOne.choice == "Paper" && playerTwo.choice == "Rock") || (playerOne.choice == "Paper" && playerTwo.choice == "Lizard") || (playerOne.choice == "Scissors" && playerTwo.choice == "Paper") || (playerOne.choice == "Scissors" && playerTwo.choice == "Lizard") || (playerOne.choice == "Lizard" && playerTwo.choice == "Paper") || (playerOne.choice == "Lizard" && playerTwo.choice == "Lizard") || (playerOne.choice == "Spock" && playerTwo.choice == "Scissors") || (playerOne.choice == "Spock" && playerTwo.choice == "Rock"))
+            else if ((playerOne.choice == "Rock" && playerTwo.choice == "Scissors") || (playerOne.choice == "Rock" && playerTwo.choice == "Lizard") || (playerOne.choice == "Paper" && playerTwo.choice == "Rock") || (playerOne.choice == "Paper" && playerTwo.choice == "Spock") || (playerOne.choice == "Scissors" && playerTwo.choice == "Paper") || (playerOne.choice == "Scissors" && playerTwo.choice == "Lizard") || (playerOne.choice == "Lizard" && playerTwo.choice == "Spock") || (playerOne.choice == "Lizard" && playerTwo.choice == "Paper") || (playerOne.choice == "Spock" && playerTwo.choice == "Scissors") || (playerOne.choice == "Spock" && playerTwo.choice == "Rock"))
             {
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine($"{playerOne.name} Won This Round");
